@@ -15,8 +15,8 @@ mongoose.connect('mongodb://nodejs:nodejs@starship.daconsulting.co.za/playground
 
 
 app.use(express.json()); // req.body object populated from the request
-app.use('/api/genres/', genres);
-app.use('/api/customers/', customers);
+app.use('/api/genres/', genres); // This tells express to route to genres module
+app.use('/api/customers/', customers); // This tells express to route to customers module
 
 app.use(function (req, res, next) {
     console.log('Logging...');
