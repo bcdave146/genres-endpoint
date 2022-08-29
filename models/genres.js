@@ -9,18 +9,19 @@ const mongoose = require('mongoose');
 //     { id:4, name: 'Family' },
 // ];
 
-const Genre = mongoose.model('Genre', new mongoose.Schema({
+const genreSchema = mongoose.Schema({
     name: {
     type: String,
     required: true,
     minlength: 5,
     maxlength: 50
     }
-}));
+});
 
+const Genre = mongoose.model('Genre', genreSchema);
 
 // function validateGenre
-function validateGenres(genre) {
+function validateGenre(genre) {
     const schema = {
         name: Joi.string().min(3).required()
     };
@@ -29,5 +30,6 @@ function validateGenres(genre) {
     
 };
 
+module.exports.genreSchema = genreSchema;
 module.exports.Genre = Genre;
-module.exports.validateGenres = validateGenres;
+module.exports.validateGenre = validateGenre;

@@ -1,5 +1,6 @@
 const express = require('express');
-const { Genre, validateGenres } = require('../models/genres');
+const mongoose = require('mongoose');
+const { Genre, validateGenre } = require('../models/genres');
 const router = express.Router();
 
 
@@ -21,7 +22,7 @@ router.get('/:id', async(req, res) => {
 // App POST
 
 router.post('/', async (req, res) => {
-    const { error } = validateGenres(req.body);
+    const { error } = validateGenre(req.body);
     if (error) return res.status(400).send(error.details[0].message); // 400 Bad Request
          
     let genre = new Genre({ name: req.body.name });
@@ -34,7 +35,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     // Validate
     // If invalid, return 400 - Bad request
-    const { error } = validateGenres(req.body);
+    const { error } = validateGenre(req.body);
     if (error) return res.status(400).send(error.details[0].message); // 400 Bad Request
     
     const genre = await Genre.findByIdAndUpdate(req.params.id, { name: req.body.name }, {
