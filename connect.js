@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const express = require('express');
+const app = express();
 
 const connectDB = (URL) => {
 	return mongoose.connect(URL, {
@@ -7,11 +9,16 @@ const connectDB = (URL) => {
 	});
 };
 
+console.log('We are in connect.js')
+const port = process.env.PORT || 3000;
 const start = async () => {
     try {
-        await connectDB("mongodb://nodejs:nodejs@starship.daconsulting.co.za/vidly");
+        await mongoose.connect('mongodb://nodejs:nodejs@starship.daconsulting.co.za/vidly')
+        .then(() => console.log('Connected to MongoDB...'))
+        .catch(err => console.error('Could not connect to MongoDB...', err));
+        
         app.listen(port, () => {
-        console.log(`Server is running on port ${PORT}.`);
+        console.log(`Server is running on port ${port}.`);
             });
         } catch (error) {
         console.log(error);

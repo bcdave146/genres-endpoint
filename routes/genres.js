@@ -1,34 +1,41 @@
+const asyncMiddleware = require('../middleware/async');
+const auth = require('../middleware/auth');
+const admin = require('../middleware/admin');
 const express = require('express');
 const mongoose = require('mongoose');
 const { Genre, validateGenre } = require('../models/genres');
 const router = express.Router();
 
+//const reportScript = 'rt-genres';
 
-router.get('/', async (req, res) => {
+router.get('/', asyncMiddleware(async (req, res) => {
+       
     const genres = await Genre.find().sort('name');
     res.send(genres);
-});
+   
+}));
 
 // /api/genres/1
 
-router.get('/:id', async(req, res) => {
+router.get('/:id', asyncMiddleware(async (req, res) => {
 
     const genre = await Genre.findById(req.params.id);
-
-    if (!genre) return res.status(404).send('The genre with the given ID was not found!');// 404 
+    
+    //if (!genre) return res.status(404).send('rt-genres : The genre with the given ID was not found!');// 404 moved to error.js 
     res.send(genre);
-});
+}));
 
-// App POST
+// App POST - use auth middleware function to verify user
 
-router.post('/', async (req, res) => {
+router.post('/', auth, asyncMiddleware(async (req, res) => {
+
     const { error } = validateGenre(req.body);
     if (error) return res.status(400).send(error.details[0].message); // 400 Bad Request
          
     let genre = new Genre({ name: req.body.name });
     genre = await genre.save();
     res.send(genre);
-});
+}));
 
 // App PUT
 
@@ -43,14 +50,14 @@ router.put('/:id', async (req, res) => {
     });
     // Update genre
     // Return the updated genre
-    if (!genre) return res.status(404).send('The genre with the given ID was not found!');// 404 
+    if (!genre) return res.status(404).send('route-gener:The genre with the given ID was not found!');// 404 
 
     res.send(genre);
 });
 
 // App HTTP DELETE
-
-router.delete('/:id', async (req, res) => {
+// parameters path, middleware, req, res, next
+router.delete('/:id', [auth, admin], async (req, res) => {
     // Look up the genres
     // Not existing, return 404
     const genre = await Genre.findByIdAndRemove(req.params.id);

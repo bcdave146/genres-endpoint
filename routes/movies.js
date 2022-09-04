@@ -1,3 +1,4 @@
+const auth = require('../middleware/auth');
 const express = require('express');
 const { Movie, validateMovie } = require('../models/movies');
 const { Genre } = require('../models/genres');  
@@ -20,14 +21,14 @@ router.get('/:id', async(req, res) => {
 
 // App POST
 
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
     const { error } = validateMovie(req.body);
     if (error) return res.status(400).send(error.details[0].message); // 400 Bad Request
 
     const genre = await Genre.findById(req.body.genreId);
     if (!genre) return res.status(400).send('Invalid genre.');
          
-    let movie = new Movie({ 
+    const movie = new Movie({ 
         title: req.body.title, 
         genre: {
           _id: genre._id,
@@ -37,13 +38,13 @@ router.post('/', async (req, res) => {
         dailyRentalRate: req.body.dailyRentalRate 
     });
     
-    movie = await movie.save();
+    await movie.save();
     res.send(movie);
 });
 
 // App PUT
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
     // Validate
     // If invalid, return 400 - Bad request
     const { error } = validateMovie(req.body);
@@ -69,7 +70,7 @@ router.put('/:id', async (req, res) => {
 
 // App HTTP DELETE
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     // Look up the movies
     // Not existing, return 404
     const movie = await Movie.findByIdAndRemove(req.params.id);
