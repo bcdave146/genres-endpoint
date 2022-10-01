@@ -1,5 +1,4 @@
 {
     "jwtPrivateKey" : "vidly_jwtPrivateKey",
-    "mongodb_user" : "mongodb_user",
-    "mongodb_password" : "mongodb_password"
-}
+    "mongodb_user" : "mongodb_user"
+    }

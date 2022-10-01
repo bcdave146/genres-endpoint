@@ -1,3 +1,4 @@
+const validateObjectId = require('../middleware/validateObjectId');
 const asyncMiddleware = require('../middleware/async');
 const auth = require('../middleware/auth');
 const admin = require('../middleware/admin');
@@ -17,11 +18,12 @@ router.get('/', asyncMiddleware(async (req, res) => {
 
 // /api/genres/1
 
-router.get('/:id', asyncMiddleware(async (req, res) => {
+router.get('/:id', validateObjectId, asyncMiddleware(async (req, res) => {
 
     const genre = await Genre.findById(req.params.id);
     
-    //if (!genre) return res.status(404).send('rt-genres : The genre with the given ID was not found!');// 404 moved to error.js 
+    if (!genre) return res.status(404).send('rt-genres : The genre with the given ID was not found!');// 404 moved to error.js 
+    
     res.send(genre);
 }));
 

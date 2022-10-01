@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();  // This is configured express methods (HTTP server) once and sent as argument to all modules
 
 
-require('./startup/logging');
+require('./startup/logging')();
 require('./startup/routes')(app); // This calls the routes.js, handles all HTTP endpoints, module with the (app) object
 require('./startup/db')();
 require('./startup/config')();
@@ -39,5 +39,6 @@ app.get('/', (req, res) => {
 
 // When PORT is set
 const port = process.env.PORT || 3000;
-app.listen(port, () => winston.info(`Listening on port ${port}`));
+const server = app.listen(port, () => winston.info(`Listening on port ${port}`)); // setting the server up on a listening port
 
+module.exports = server; // Export this function for the ingetration tests

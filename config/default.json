@@ -1,5 +1,5 @@
 {
     "jwtPrivateKey" : "",
-    "mongodb_user" : "",
-    "mongodb_password" : ""
-}
+    "db" : "@starship.daconsulting.co.za/vidly",
+    "mongodb_user" : ""
+    }

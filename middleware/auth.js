@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
+// Auth model recieves request, response and next function
 module.exports = function (req, res, next) {
     
     const token = req.header('x-auth-token');
