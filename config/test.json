@@ -1,0 +1,7 @@
+
+{
+    "jwtPrivateKey" : "1234",
+    "db" : "@starship.daconsulting.co.za/playground",
+    "mongodb_user" : "a",
+    "mongodb_password" : "a"
+}
