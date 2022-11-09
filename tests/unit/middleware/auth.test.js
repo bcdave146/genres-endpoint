@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 describe('auth middleware unit test', () => {
     it('should populate req.user with the payload of a valid JWT', () => {
         const user = { _id: mongoose.Types.ObjectId().toHexString(), isAdmin: true}
-        const token = new User().generateAuthToken();
+        const token = new User(user).generateAuthToken();
         
         const req = {
             header: jest.fn().mockReturnValue(token)
