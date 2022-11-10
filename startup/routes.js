@@ -5,6 +5,7 @@ const movies = require('../routes/movies');
 const rentals = require('../routes/rentals');
 const users = require('../routes/users');
 const auth = require('../routes/auth');
+const returns = require('../routes/returns');
 const error = require('../middleware/error');
 
 
@@ -16,6 +17,7 @@ module.exports = function (app) {
     app.use('/api/rentals/',rentals);                   // This tells express to route to rentals module
     app.use('/api/users/',users);                       // This tells express to route to users module
     app.use('/api/auth/',auth);                         // This tells express to route to auth module
+    app.use('/api/returns/',returns);                      // This tells express to route to retrun modle
 
     app.use(error);                                     // This handles all Errors, Error handling function in Express ONLY
 };

@@ -269,6 +269,7 @@
 {"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.setTimeout (/mnt/d/projects/dapp/nodejs-starter/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)","level":"error","timestamp":"2022-09-29T09:56:37.186Z"}
 {"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.setTimeout (/mnt/d/projects/dapp/nodejs-starter/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)","level":"error","timestamp":"2022-09-29T09:57:02.172Z"}
 {"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.setTimeout (/mnt/d/projects/dapp/nodejs-starter/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)","level":"error","timestamp":"2022-09-29T09:57:12.237Z"}
+<<<<<<< HEAD
 {"level":"info","message":"Listening on port 3000","timestamp":"2022-10-04T07:38:04.521Z"}
 {"level":"info","message":"Listening on port 3000","timestamp":"2022-10-04T07:38:04.530Z"}
 {"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.setTimeout (/mnt/d/projects/dapp/nodejs-starter/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at ontimeout (timers.js:436:11)\n    at tryOnTimeout (timers.js:300:5)\n    at listOnTimeout (timers.js:263:5)\n    at Timer.processTimers (timers.js:223:10)","level":"error","timestamp":"2022-10-04T07:38:21.114Z"}
@@ -285,3 +286,74 @@
 {"level":"info","message":"Listening on port 5000","timestamp":"2022-10-04T08:59:02.287Z"}
 {"level":"info","message":"Connected to starship.daconsulting.co.za/playground...","timestamp":"2022-10-04T08:59:03.902Z"}
 {"level":"info","message":"Connected to starship.daconsulting.co.za/playground...","timestamp":"2022-10-04T08:59:03.989Z"}
+=======
+>>>>>>> 0bcfea5 (unit testing)
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:01:43.610Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:01:48.645Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:01:53.628Z"}
+{"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (/home/dave/apps/javascript/projects/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)","level":"error","timestamp":"2022-11-10T10:02:03.737Z"}
+{"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (/home/dave/apps/javascript/projects/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)","level":"error","timestamp":"2022-11-10T10:02:23.602Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:11:45.045Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:11:45.058Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:11:50.154Z"}
+{"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (/home/dave/apps/javascript/projects/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)","level":"error","timestamp":"2022-11-10T10:11:55.192Z"}
+{"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (/home/dave/apps/javascript/projects/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)","level":"error","timestamp":"2022-11-10T10:12:25.218Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:13:10.146Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:13:10.189Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:13:15.294Z"}
+{"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (/home/dave/apps/javascript/projects/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)","level":"error","timestamp":"2022-11-10T10:13:20.320Z"}
+{"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (/home/dave/apps/javascript/projects/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)","level":"error","timestamp":"2022-11-10T10:13:50.315Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:14:41.649Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:14:41.735Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:18:59.586Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:18:59.706Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:19:04.693Z"}
+{"message":"Operation `genres.insertOne()` buffering timed out after 10000ms","stack":"MongooseError: Operation `genres.insertOne()` buffering timed out after 10000ms\n    at Timeout.<anonymous> (/home/dave/apps/javascript/projects/genres-endpoint/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:151:23)\n    at listOnTimeout (internal/timers.js:554:17)\n    at processTimers (internal/timers.js:497:7)","level":"error","timestamp":"2022-11-10T10:19:14.775Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:19:58.710Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:19:58.720Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T10:20:00.518Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T10:20:00.686Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T10:20:00.690Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:20:01.858Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:34:13.824Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:34:13.827Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T10:34:16.227Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T10:34:16.380Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T10:34:16.545Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T10:34:18.651Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:34:16.486Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:34:19.039Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:34:44.280Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:34:46.372Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:34:52.912Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:34:55.054Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:36:49.449Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:36:51.254Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:37:09.355Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:37:11.516Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:37:18.226Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:37:20.186Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:39:59.069Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:40:01.398Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:40:21.131Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:40:23.110Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:40:29.197Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:40:31.050Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:50:01.465Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:50:03.673Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:50:22.571Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:50:25.185Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:50:31.377Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:50:33.273Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:52:09.737Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:52:11.446Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:52:30.371Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:52:32.422Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:52:38.330Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:52:40.121Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:57:54.584Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:57:57.040Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:58:16.072Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:58:17.950Z"}
+{"level":"info","message":"Listening on port 5000","timestamp":"2022-11-10T14:58:22.837Z"}
+{"level":"info","message":"Connected to localhost:27016/playground...","timestamp":"2022-11-10T14:58:25.276Z"}

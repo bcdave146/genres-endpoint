@@ -23,7 +23,7 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "test": "jest --env=node --verbose --coverage"
+    "test": "jest --env=node --no-cache --forceExit --runInBand --verbose --coverage"
   },
   "author": "",
   "license": "ISC"
