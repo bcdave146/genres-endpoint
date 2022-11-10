@@ -6,6 +6,8 @@ const auth = require('../middleware/auth');
 const express = require('express');
 const router = express.Router();
 
+
+
 router.post('/', [auth, validate(validateReturn)], async (req, res) => {
   const { error } = validateReturn(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -23,7 +25,7 @@ router.post('/', [auth, validate(validateReturn)], async (req, res) => {
     $inc: { numberInStock: 1 }
   });
 
-  return res.status(200).send(rental);
+  return res.send(rental);
 });
 
 function validateReturn(req) {

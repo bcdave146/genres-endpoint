@@ -9,11 +9,6 @@ const {Movie} = require('../../models/movies');
 const {User} = require('../../models/user');
 const mongoose = require('mongoose');
 
-
-
-
-
-
 describe('/api/returns', () => {
     let server;
     let customerId;
@@ -144,9 +139,7 @@ describe('/api/returns', () => {
 
     it('should set the stock with returned movie', async () => {
                 
-        await rental.save();
-
-        const res = await exec();
+       const res = await exec();
 
         const movieInDb = await Movie.findById(movieId);
         expect (movieInDb.numberInStock).toBe(movie.numberInStock + 1);
@@ -162,7 +155,4 @@ describe('/api/returns', () => {
                 ['dateOut','dateReturned', 'rentalFee', 'customer', 'movie']
         ));
     });
-
-
-
 });
