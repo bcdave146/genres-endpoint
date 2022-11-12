@@ -10,6 +10,7 @@ require('./startup/routes')(app); // This calls the routes.js, handles all HTTP 
 require('./startup/db')();
 require('./startup/config')();
 require('./startup/validation')();
+require('./startup/prod')(app);
 
 
 // Catch uncaughtExceptions - Replace this with winston methode

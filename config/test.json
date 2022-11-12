@@ -1,7 +1,7 @@
 
 {
     "jwtPrivateKey" : "1234",
-    "db" : "@localhost:27016/playground",
+    "db" : "",
     "mongodb_user" : "a",
     "mongodb_password" : "a"
 }
