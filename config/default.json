@@ -1,5 +1,5 @@
 {
     "jwtPrivateKey" : "",
-    "db" : "@localhost:27016/vidly",
+    "db" : "@localhost:27017/vidly",
     "mongodb_user" : ""
     }
