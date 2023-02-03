@@ -29,9 +29,9 @@ const corsOptions = {
   methods: ["GET", "PUT", "POST", "DELETE"],
 };
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
-app.use(function (req, res, next) {
+app.use(cors(corsOptions), function (req, res, next) {
   //console.log('Logging...');
   next();
 });
