@@ -1,11 +1,10 @@
 const auth = require("../middleware/auth");
-const jwt = require("jsonwebtoken");
-const config = require("config");
+
 const bcrypt = require("bcrypt");
 const _ = require("lodash");
-const express = require("express");
-const mongoose = require("mongoose");
+
 const { User, validateUser } = require("../models/user");
+const express = require("express");
 const router = express.Router();
 
 router.get("/me", auth, async (req, res) => {
@@ -15,6 +14,7 @@ router.get("/me", auth, async (req, res) => {
 
 router.post("/", async (req, res) => {
   const { error } = validateUser(req.body);
+
   if (error) return res.status(400).send(error.details[0].message); // 400 Bad Request
 
   let user = await User.findOne({ email: req.body.email });
@@ -24,12 +24,18 @@ router.post("/", async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
 
-  await user.save();
+  try {
+    await user.save();
 
-  const token = user.generateAuthToken();
-  res
-    .header("x-auth-token", token)
-    .send(_.pick(user, ["_id", "name", "email"]));
+    const token = user.generateAuthToken();
+    res
+      .header("x-auth-token", token)
+      .header("access-control-expose-headers", "x-auth-token") // set this to allow the client to see the header
+      .send(_.pick(user, ["_id", "name", "email"]));
+  } catch (ex) {
+    // console.log("In catch block users routes");
+    return res.send(ex.response.statusText);
+  }
 });
 
 module.exports = router;

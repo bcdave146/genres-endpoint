@@ -35,7 +35,12 @@ const userSchema = new mongoose.Schema({
 // Can add a method to object to be used when calling to generate a auth Token to use in header field x-auth-token
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
-    { _id: this._id, isAdmin: this.isAdmin },
+    {
+      _id: this._id,
+      name: this.name,
+      email: this.email,
+      isAdmin: this.isAdmin,
+    },
     config.get("jwtPrivateKey")
   );
   return token;
@@ -43,22 +48,10 @@ userSchema.methods.generateAuthToken = function () {
 
 const User = mongoose.model("User", userSchema);
 
-// set password complexityOptions options
-const complexityOptions = {
-  min: 10,
-  max: 30,
-  lowerCase: 1,
-  upperCase: 1,
-  numeric: 1,
-  symbol: 1,
-  requirementCount: 2,
-};
-const label = "Password";
-
 // function validateUser
 function validateUser(user) {
   const schema = {
-    name: Joi.string().min(5).max(50).required(),
+    name: Joi.string().min(2).max(50).required(),
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
   };
