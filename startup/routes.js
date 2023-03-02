@@ -19,10 +19,10 @@ const corsOptions = {
 module.exports = function (app) {
   app.use(cors(corsOptions), express.json()); // req.body object populated from the request to handle JSON type HTTP calls
   app.use("/api/genres/", cors(corsOptions), genres); // This tells express to route to genres module
-  app.use("/api/customers/", customers); // This tells express to route to customers module
+  app.use("/api/customers/", cors(corsOptions), customers); // This tells express to route to customers module
   app.use("/api/movies/", cors(corsOptions), movies); // This tells express to route to movies module
   app.use("/api/rentals/", cors(corsOptions), rentals); // This tells express to route to rentals module
-  app.use("/api/users/", users); // This tells express to route to users module
+  app.use("/api/users/", cors(corsOptions), users); // This tells express to route to users module
   app.use("/api/auth/", cors(corsOptions), auth); // This tells express to route to auth module
   app.use("/api/returns/", returns); // This tells express to route to retrun modle
 

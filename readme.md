@@ -38,3 +38,6 @@ export vidly_jwtPrivateKey=[SecertPrivateKey]
 
 Example command to start the docker app:
 sudo docker run -m "300m" --memory-swap "300M" --network host --name vidly-rest-server --restart unless-stopped -e "PORT=5000" -e "db=@localhost:27017/vidly" -e "mongodb_user=nodejs:nodejs" -e "vidly_jwtPrivateKey=SecertPrivateKey" -d john146/javascript-apps:vidly-nodejs-endpoint
+
+http://178.62.84.58:5000/api/genres
+http://178.62.84.58:5000/api/movies

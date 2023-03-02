@@ -16,5 +16,5 @@ module.exports = function (err, req, res, next) {
   else
     res
       .status(500)
-      .send("mw-error:Get Genres failed. " + err.kind + " : " + err.message);
+      .send("Unspecified err - failed. " + err.kind + " : " + err.message);
 };
