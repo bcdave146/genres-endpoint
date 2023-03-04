@@ -78,6 +78,14 @@ rentalSchema.statics.rentalLookup = function (customerId) {
   });
 };
 
+// DA 02 03 2023 Add check for rental for movies if yes dont detele the Movie
+//
+rentalSchema.statics.rentalLookupMovie = function (movieId) {
+  return this.findOne({
+    "movie._id": movieId,
+  });
+};
+
 rentalSchema.methods.return = function () {
   this.dateReturned = new Date();
 

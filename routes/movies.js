@@ -3,6 +3,7 @@ const admin = require("../middleware/admin");
 const express = require("express");
 const { Movie, validateMovie } = require("../models/movies");
 const { Genre } = require("../models/genres");
+const { Rental } = require("../models/rentals");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -80,6 +81,18 @@ router.put("/:id", auth, async (req, res) => {
 
 router.delete("/:id", [auth, admin], async (req, res) => {
   // Look up the movies
+  // DA 02 03 2023 Add check if Movie has a rental, if yes then don't delete.
+  // Added rentalLookupMovie in model/rentals.js
+  //
+  const rental = await Rental.rentalLookupMovie(req.params.id);
+
+  if (rental)
+    return res
+      .status(400)
+      .send(
+        "Movie has a rental unable to process, return rental then you able to delete."
+      );
+
   // Not existing, return 404
   const movie = await Movie.findByIdAndRemove(req.params.id);
   if (!movie)

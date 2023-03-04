@@ -18,6 +18,7 @@ router.get("/", async (req, res) => {
   const rentals = await Rental.find({ dateReturned: { $exists: false } }).sort(
     "-dateOut"
   );
+  // TODO add calculate the rentalFee to display on the rentals page as Amount Due - HERE
 
   res.send(rentals);
 });

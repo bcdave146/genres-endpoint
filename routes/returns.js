@@ -22,6 +22,8 @@ router.post("/", [auth, validate(validateReturn)], async (req, res) => {
   rental.return();
 
   // Save the Rental Return to the Database
+
+  // TODO add the session save for both collections to be updated as in Rentals POST
   await rental.save();
 
   await Movie.update(

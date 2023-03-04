@@ -71,7 +71,8 @@ router.delete("/:id", async (req, res) => {
   // Look up rental
   // Rental existing, return 400
   // DA 28 02 2023 Add check if Customer has a rental, if yes then don't delete.
-
+  // Added rentalLookup in model/rentals.js
+  //
   const rental = await Rental.rentalLookup(req.params.id);
 
   if (rental)
