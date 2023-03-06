@@ -10,7 +10,11 @@ router.post("/", [auth, validate(validateReturn)], async (req, res) => {
   const { error } = validateReturn(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const rental = await Rental.lookup(req.body.customerId, req.body.movieId);
+  const rental = await Rental.lookup(
+    req.body.rentalId,
+    req.body.customerId,
+    req.body.movieId
+  );
 
   if (!rental) return res.status(404).send("Rental not found.");
 
@@ -38,6 +42,7 @@ router.post("/", [auth, validate(validateReturn)], async (req, res) => {
 
 function validateReturn(req) {
   const schema = {
+    rentalId: Joi.objectId().required(),
     customerId: Joi.objectId().required(),
     movieId: Joi.objectId().required(),
   };

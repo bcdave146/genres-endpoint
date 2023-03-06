@@ -1,6 +1,6 @@
 # Setup Environment variables for database connections.
 
-#
+# Install ci for faster productions apps
 
 # Export these for the app to start
 

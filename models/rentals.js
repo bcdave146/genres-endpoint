@@ -63,8 +63,10 @@ const rentalSchema = new mongoose.Schema({
   },
 });
 
-rentalSchema.statics.lookup = function (customerId, movieId) {
+// DA 6 03 2023 Add the rentalId for the lookup to fix bug where two rentals with same customer & movies can not be processed.
+rentalSchema.statics.lookup = function (rentalId, customerId, movieId) {
   return this.findOne({
+    "._id": rentalId,
     "customer._id": customerId,
     "movie._id": movieId,
   });
