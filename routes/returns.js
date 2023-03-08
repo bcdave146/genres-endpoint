@@ -18,8 +18,10 @@ router.post("/", [auth, validate(validateReturn)], async (req, res) => {
 
   if (!rental) return res.status(404).send("Rental not found.");
 
-  if (rental.dateReturned)
+  if (rental.dateReturned) {
     return res.status(400).send("Return already processed.");
+    //return res.status(400).send(rental._id);
+  }
 
   // Use the Schema return function to calculate the rental fee.
   // rental fee is days * rentalDaily Rate
